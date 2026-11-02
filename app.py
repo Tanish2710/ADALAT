@@ -246,6 +246,10 @@ st.markdown("""
   .block-container { max-width: 1240px; padding-top: 2.4rem; padding-bottom: 4rem; }
   footer { display: none !important; }
   h1, h2, h3, h4 { letter-spacing: -0.015em; }
+  /* Formal serif titles, matching the logo; the font is loaded via headingFont in .streamlit/config.toml */
+  .page-head h1, .auth-head h1, .auth-hero h2 {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif !important; font-weight: 600 !important;
+    letter-spacing: -0.01em !important; }
 
   /* Bordered containers read as white cards on the off-white page */
   [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] { background: var(--surface); }
