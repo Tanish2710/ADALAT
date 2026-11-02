@@ -88,8 +88,10 @@ export SMTP_USER="you@gmail.com" SMTP_PASS="your-app-password" FROM_EMAIL="you@g
 
 ```bash
 pip install -r requirements.txt
-./run.sh            # or: python3 -m streamlit run app.py
+./run.sh            # or: python3 -m streamlit run app.py   (on Windows: python -m streamlit run app.py)
 ```
+
+Needs Streamlit 1.58 or newer (older versions crash on load or forget the dark mode choice on reload).
 
 On first launch you create the admin account, optionally filled with six months of sample data. The SQLite database lives at `data/finance.db` (override with `BUDGET_DB_PATH`).
 
@@ -103,6 +105,8 @@ On first launch you create the admin account, optionally filled with six months 
 | `reminders.py` | Email rendering and delivery, reminder queue, daily scheduler, CLI |
 | `auth.py` | Password hashing, sign-up, login, sessions |
 | `database.py` | SQLite schema, migrations, CRUD, per-account visibility and sample data |
+| `assets/` | Logo (`logo.svg`, `logo-dark.svg`) and app icon (`mark.svg`) |
+| `.streamlit/config.toml` | Light and dark themes: formal serif headings, pastel palette |
 | `tests/` | Checks for balances, accounts, circles and passwords (`pip install pytest`, then `python -m pytest tests`) |
 
 ## Database schema
